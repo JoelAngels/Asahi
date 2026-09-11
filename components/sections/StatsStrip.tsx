@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useEffect } from 'react';
+import Image from 'next/image';
 import { motion } from 'motion/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -55,6 +56,21 @@ export const StatsStrip: React.FC = () => {
       id="stats-strip"
       className="relative bg-[#071009] text-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
+      {/* Development render substrate, graded down behind the figures */}
+      <div className="absolute inset-0 opacity-[0.38]" aria-hidden="true">
+        <Image
+          src="/05-rooftop-terrace-sunset.png"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-[50%_62%]"
+        />
+      </div>
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-[#071009] via-[#071009]/80 to-[#071009]"
+        aria-hidden="true"
+      />
+
       {/* Blueprint substrate + horizon glow */}
       <div className="absolute inset-0 bg-blueprint-dark mask-fade-y opacity-60" aria-hidden="true" />
       <div

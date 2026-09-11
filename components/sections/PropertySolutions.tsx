@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'motion/react';
 import { MicroLabel } from '../ui/MicroLabel';
 import { SectionHeading } from '../ui/SectionHeading';
@@ -47,13 +48,12 @@ export const PropertySolutions: React.FC = () => {
             className="card-lux rounded-[1.75rem] overflow-hidden flex flex-col group"
           >
             <div className="h-64 sm:h-80 overflow-hidden relative">
-              <motion.img
-                whileHover={{ scale: 1.06 }}
-                transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop"
-                alt="Modern sustainable residential property"
-                className="w-full h-full object-cover will-change-transform"
-                loading="lazy"
+              <Image
+                src="/03-courtyard-playground.png"
+                alt="Landscaped residential courtyard with play structure, framed by apartment balconies"
+                fill
+                sizes="(max-width: 1024px) 100vw, 620px"
+                className="object-cover will-change-transform transition-transform duration-[650ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]"
               />
               <div
                 className="absolute inset-0 bg-gradient-to-t from-[#071009]/55 via-transparent to-transparent pointer-events-none"
@@ -110,13 +110,12 @@ export const PropertySolutions: React.FC = () => {
             className="card-lux rounded-[1.75rem] overflow-hidden flex flex-col group"
           >
             <div className="h-64 sm:h-80 overflow-hidden relative">
-              <motion.img
-                whileHover={{ scale: 1.06 }}
-                transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-                src="https://images.unsplash.com/photo-1577495508048-b635879837f1?q=80&w=1000&auto=format&fit=crop"
-                alt="Commercial and industrial logistics development"
-                className="w-full h-full object-cover will-change-transform"
-                loading="lazy"
+              <Image
+                src="/04-balcony-courtyard-view.png"
+                alt="Balcony stack and structural frame of a mixed-use development seen from above"
+                fill
+                sizes="(max-width: 1024px) 100vw, 620px"
+                className="object-cover will-change-transform transition-transform duration-[650ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]"
               />
               <div
                 className="absolute inset-0 bg-gradient-to-t from-[#071009]/55 via-transparent to-transparent pointer-events-none"

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'motion/react';
 import { ArrowRight, Phone } from 'lucide-react';
 import { COMPANY_INFO } from '../../data/companyInfo';
@@ -12,6 +13,21 @@ export const ClosingBanner: React.FC = () => {
 
   return (
     <section className="bg-[#071009] text-white py-24 sm:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Flagship render substrate, heavily scrimmed */}
+      <div className="absolute inset-0 opacity-[0.28]" aria-hidden="true">
+        <Image
+          src="/01-building-exterior-sunset.png"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+      </div>
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-[#071009] via-[#071009]/90 to-[#071009]"
+        aria-hidden="true"
+      />
+
       {/* Animated Ambient Radial Glow */}
       <motion.div
         animate={{

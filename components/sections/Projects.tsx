@@ -215,16 +215,19 @@ export const Projects: React.FC = () => {
               </motion.div>
             </div>
 
-            {/* Gallery */}
+            {/* Development & amenities gallery */}
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-ink-muted mb-4 mt-10 px-1">
+              The Development
+            </h4>
             <motion.div
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-40px' }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-6"
             >
               {project.gallery.map((shot) => (
-                <motion.div
+                <motion.figure
                   key={shot.src}
                   variants={cardStaggerItem}
                   whileHover={{ y: -6, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] } }}
@@ -234,19 +237,66 @@ export const Projects: React.FC = () => {
                     src={shot.src}
                     alt={shot.alt}
                     fill
-                    sizes="(max-width: 640px) 100vw, 50vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 620px"
                     className="object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                   />
                   <div
-                    className="absolute inset-0 bg-gradient-to-t from-[#071009]/70 via-transparent to-transparent"
+                    className="absolute inset-0 bg-gradient-to-t from-[#071009]/75 via-[#071009]/5 to-transparent"
                     aria-hidden="true"
                   />
-                </motion.div>
+                  {shot.caption ? (
+                    <figcaption className="absolute bottom-0 inset-x-0 p-5 text-[11px] sm:text-[12px] font-semibold uppercase tracking-[0.14em] text-white/90">
+                      {shot.caption}
+                    </figcaption>
+                  ) : null}
+                </motion.figure>
               ))}
             </motion.div>
 
             <p className="text-[11.5px] text-ink-muted font-light mt-4 px-1">
               {project.galleryCaption}
+            </p>
+
+            {/* Interiors gallery */}
+            <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-ink-muted mb-4 mt-10 px-1">
+              Inside the Residences
+            </h4>
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-40px' }}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            >
+              {project.interiors.map((shot) => (
+                <motion.figure
+                  key={shot.src}
+                  variants={cardStaggerItem}
+                  whileHover={{ y: -6, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] } }}
+                  className="relative rounded-[1.25rem] overflow-hidden aspect-[4/3] ring-1 ring-black/5 shadow-[0_20px_50px_-34px_rgba(11,23,18,0.7)] group"
+                >
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+                    className="object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                  />
+                  <div
+                    className="absolute inset-0 bg-gradient-to-t from-[#071009]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    aria-hidden="true"
+                  />
+                  {shot.caption ? (
+                    <figcaption className="absolute bottom-0 inset-x-0 p-4 text-[10.5px] sm:text-[11px] font-semibold uppercase tracking-[0.14em] text-white translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                      {shot.caption}
+                    </figcaption>
+                  ) : null}
+                </motion.figure>
+              ))}
+            </motion.div>
+
+            <p className="text-[11.5px] text-ink-muted font-light mt-4 px-1">
+              {project.interiorsCaption}
             </p>
           </article>
         ))}

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, Variants } from 'motion/react';
 import { ArrowRight, Droplets, ShieldCheck } from 'lucide-react';
 import gsap from 'gsap';
@@ -36,7 +37,7 @@ const HEADLINE_WORDS = HEADLINE_SEGMENTS.flatMap((segment) =>
 
 export const Hero: React.FC = () => {
   const heroRef = useRef<HTMLElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
   const { scrollTo } = useSmoothScroll();
 
   useEffect(() => {
@@ -192,13 +193,19 @@ export const Hero: React.FC = () => {
               transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1], delay: 0.35 }}
               className="corner-ticks relative rounded-[1.75rem] overflow-hidden aspect-[4/3] md:aspect-[4/5] max-h-[520px] ring-1 ring-black/5 shadow-[0_40px_80px_-40px_rgba(11,23,18,0.6)]"
             >
-              <img
+              <div
                 ref={imageRef}
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop"
-                alt="Modern commercial infrastructure development"
-                className="w-full h-full object-cover will-change-transform scale-105"
-                loading="eager"
-              />
+                className="absolute inset-0 will-change-transform scale-105"
+              >
+                <Image
+                  src="/02-building-exterior-street.png"
+                  alt="Rongai Heights by ADL — the completed tower seen from the street approach"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 480px"
+                  className="object-cover"
+                  preload
+                />
+              </div>
 
               {/* Duotone grade + base scrim for badge legibility */}
               <div

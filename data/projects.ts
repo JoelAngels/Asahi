@@ -1,7 +1,7 @@
 import { Project } from '../types';
 
-// Imagery under /public/projects is placeholder artwork — swap the `src` values
-// for the real renders, the rest of the section needs no changes.
+// Imagery is the Rongai Heights render set under /public (01–11): exteriors and
+// amenities feed `gallery`, unit interiors feed `interiors`.
 export const PROJECTS: Project[] = [
   {
     id: 'rongai-heights',
@@ -37,13 +37,65 @@ export const PROJECTS: Project[] = [
       'Secure and well-managed environment',
     ],
     heroImage: {
-      src: '/projects/rongai-heights-1.jpg',
-      alt: 'Rongai Heights residential tower',
+      src: '/01-building-exterior-sunset.png',
+      alt: 'Rongai Heights tower at sunset, balconies lit against the Ngong Hills horizon',
     },
     gallery: [
-      { src: '/projects/rongai-heights-2.jpg', alt: 'Rongai Heights street approach and frontage' },
-      { src: '/projects/rongai-heights-3.jpg', alt: 'Rongai Heights rooftop amenity deck at sunset' },
+      {
+        src: '/02-building-exterior-street.png',
+        alt: 'Rongai Heights street approach with signage wall and landscaped verge',
+        caption: 'Street approach & signature entrance',
+      },
+      {
+        src: '/03-courtyard-playground.png',
+        alt: "Landscaped internal courtyard with children's play structure and swings",
+        caption: "Courtyard gardens & kids' play area",
+      },
+      {
+        src: '/04-balcony-courtyard-view.png',
+        alt: 'View down the balcony stack onto the planted courtyard below',
+        caption: 'Private balconies over the green core',
+      },
+      {
+        src: '/05-rooftop-terrace-sunset.png',
+        alt: 'Rooftop amenity terrace with planters and an open skyline at sunset',
+        caption: 'Rooftop amenity deck at sunset',
+      },
     ],
-    galleryCaption: 'Common amenities, Kids play area and retail spaces',
+    galleryCaption: 'Common amenities, retail frontage, courtyard gardens and the rooftop terrace.',
+    interiors: [
+      {
+        src: '/06-interior-living-room-1.png',
+        alt: 'Living room with floor-to-ceiling sheers, sectional sofa and framed artwork',
+        caption: 'Living room — natural light throughout',
+      },
+      {
+        src: '/07-interior-living-room-2.png',
+        alt: 'Second living room view showing the seating arrangement and balcony access',
+        caption: 'Living room — balcony aspect',
+      },
+      {
+        src: '/08-interior-kitchen-living.png',
+        alt: 'Open-plan kitchen with stone backsplash and gas range opening onto the living area',
+        caption: 'Open-plan kitchen & living',
+      },
+      {
+        src: '/09-interior-kitchen-bar.png',
+        alt: 'Kitchen breakfast bar with stone counter and integrated storage',
+        caption: 'Breakfast bar & prep counter',
+      },
+      {
+        src: '/10-interior-bedroom.png',
+        alt: 'Bedroom with upholstered bed, full-height wardrobes and sheer-draped window wall',
+        caption: 'Master bedroom & fitted wardrobes',
+      },
+      {
+        src: '/11-interior-bathroom.png',
+        alt: 'Bathroom finished in stone tile with a glazed shower enclosure',
+        caption: 'Bathroom — full stone finish',
+      },
+    ],
+    interiorsCaption:
+      'Representative unit finishes across the 1 and 2 bedroom layouts.',
   },
 ];

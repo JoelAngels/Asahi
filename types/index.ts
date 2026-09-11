@@ -56,6 +56,7 @@ export interface ProjectStat {
 export interface ProjectImage {
   src: string;
   alt: string;
+  caption?: string;
 }
 
 export interface Project {
@@ -74,4 +75,6 @@ export interface Project {
   heroImage: ProjectImage;
   gallery: ProjectImage[];
   galleryCaption: string;
+  interiors: ProjectImage[];
+  interiorsCaption: string;
 }
