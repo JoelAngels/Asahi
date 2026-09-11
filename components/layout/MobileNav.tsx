@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ArrowUpRight, Phone, Mail, MapPin } from 'lucide-react';
 import { NAV_ITEMS } from '../../data/navigation';
@@ -52,14 +53,13 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
             <div>
               {/* Header */}
               <div className="flex items-center justify-between pb-5 mb-7 border-b border-hairline">
-                <div>
-                  <div className="font-display font-bold text-base text-ink leading-tight tracking-[-0.03em]">
-                    ASAHI <span className="text-[#2F8B4E]">Development</span>
-                  </div>
-                  <div className="text-[9px] text-ink-muted uppercase tracking-[0.2em] font-semibold mt-1">
-                    Limited • Kenya
-                  </div>
-                </div>
+                <Image
+                  src="/asahi-logo.png"
+                  alt="ASAHI Development Ltd"
+                  width={1665}
+                  height={464}
+                  className="h-8 w-auto"
+                />
                 <motion.button
                   whileTap={{ scale: 0.9 }}
                   onClick={onClose}

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { COMPANY_INFO } from '../../data/companyInfo';
 import { NAV_ITEMS } from '../../data/navigation';
@@ -25,18 +26,14 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 sm:gap-12 mb-16">
           {/* Brand Col */}
           <div className="lg:col-span-4">
-            <div className="flex items-center gap-3.5 mb-5">
-              <div className="relative w-11 h-11 rounded-[14px] overflow-hidden bg-gradient-to-br from-[#37A05B] via-[#2F8B4E] to-[#143D22] flex items-center justify-center text-white font-bold text-lg shadow-[0_8px_20px_-8px_rgba(47,139,78,0.9)] ring-1 ring-[#D4AF37]/30">
-                A
-              </div>
-              <div>
-                <span className="font-display font-bold text-base sm:text-lg text-white tracking-[-0.03em]">
-                  ASAHI <span className="text-[#34D399]">Development</span>
-                </span>
-                <p className="text-[9px] text-white/40 uppercase tracking-[0.2em] font-semibold m-0 mt-1">
-                  Limited • Kenya
-                </p>
-              </div>
+            <div className="mb-6">
+              <Image
+                src="/asahi-logo.png"
+                alt="ASAHI Development Ltd"
+                width={1665}
+                height={464}
+                className="h-11 sm:h-12 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-[12.5px] sm:text-[13px] text-white/50 leading-[1.75] font-light mb-7 max-w-sm">
               {COMPANY_INFO.description}

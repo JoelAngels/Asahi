@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion } from 'motion/react';
 import { Menu, ArrowUpRight } from 'lucide-react';
 import { NAV_ITEMS } from '../../data/navigation';
@@ -73,34 +74,26 @@ export const Header: React.FC<HeaderProps> = ({ onOpenMobileNav }) => {
           }`}
         >
           {/* Brand Identity */}
-          <a
+          <motion.a
             href="#top"
             onClick={(e) => handleNavClick(e, '#top')}
-            className="flex items-center gap-3 group select-none"
+            whileHover={{ scale: 1.025 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 18 }}
+            className="flex items-center shrink-0 select-none"
+            aria-label="ASAHI Development Ltd — back to top"
           >
-            <motion.div
-              whileHover={{ rotate: 6, scale: 1.06 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 16 }}
-              className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-[14px] flex items-center justify-center text-white font-bold text-lg overflow-hidden bg-gradient-to-br from-[#37A05B] via-[#2F8B4E] to-[#143D22] shadow-[0_6px_18px_-6px_rgba(30,94,51,0.8)] ring-1 ring-[#D4AF37]/30"
-            >
-              <span className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/28 to-transparent" />
-              <span className="relative">A</span>
-            </motion.div>
-            <div>
-              <div
-                className={`font-display font-bold tracking-[-0.03em] leading-none text-ink transition-all duration-500 ${
-                  scrolled ? 'text-[0.95rem] sm:text-base' : 'text-base sm:text-lg'
-                }`}
-              >
-                ASAHI{' '}
-                <span className="font-medium text-[#2F8B4E]">Development</span>
-              </div>
-              <div className="text-[9px] sm:text-[10px] text-ink-muted font-semibold tracking-[0.2em] uppercase mt-1">
-                Limited • Kenya
-              </div>
-            </div>
-          </a>
+            <Image
+              src="/asahi-logo.png"
+              alt="ASAHI Development Ltd"
+              width={1665}
+              height={464}
+              preload
+              className={`w-auto transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                scrolled ? 'h-8 sm:h-9' : 'h-9 sm:h-11'
+              }`}
+            />
+          </motion.a>
 
           {/* Desktop Navigation with Smooth Motion Sliding Indicator */}
           <nav
