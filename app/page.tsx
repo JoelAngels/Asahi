@@ -10,6 +10,7 @@ import { Hero } from '@/components/sections/Hero';
 import { StatsStrip } from '@/components/sections/StatsStrip';
 import { CompanyProfile } from '@/components/sections/CompanyProfile';
 import { PropertySolutions } from '@/components/sections/PropertySolutions';
+import { Projects } from '@/components/sections/Projects';
 import { Infrastructure } from '@/components/sections/Infrastructure';
 import { WaterSolutions } from '@/components/sections/WaterSolutions';
 import { Consultancy } from '@/components/sections/Consultancy';
@@ -41,6 +42,7 @@ export default function Home() {
           <StatsStrip />
           <CompanyProfile />
           <PropertySolutions />
+          <Projects />
           <Infrastructure />
           <WaterSolutions />
           <Consultancy />

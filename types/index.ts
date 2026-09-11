@@ -39,3 +39,39 @@ export interface NavItem {
   label: string;
   href: string;
 }
+
+export interface ProjectUnitType {
+  id: string;
+  category: string;
+  variant: string;
+  size: string;
+  units: number;
+}
+
+export interface ProjectStat {
+  value: string;
+  label: string;
+}
+
+export interface ProjectImage {
+  src: string;
+  alt: string;
+}
+
+export interface Project {
+  id: string;
+  name: string;
+  status: string;
+  location: string;
+  tagline: string;
+  summary: string;
+  overview: string;
+  priceLabel: string;
+  priceValue: string;
+  stats: ProjectStat[];
+  unitTypes: ProjectUnitType[];
+  features: string[];
+  heroImage: ProjectImage;
+  gallery: ProjectImage[];
+  galleryCaption: string;
+}
